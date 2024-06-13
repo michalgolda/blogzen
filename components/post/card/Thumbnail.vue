@@ -1,5 +1,7 @@
 <template>
-  <NuxtImg class="w-full rounded" :src="src" :alt="alt" fit="fill" />
+  <figure>
+    <NuxtImg class="w-full rounded" :src="src" :alt="alt" fit="fill" />
+  </figure>
 </template>
 <script setup lang="ts">
 export interface ThumbnailProps {

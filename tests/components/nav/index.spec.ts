@@ -8,8 +8,8 @@ describe("Nav component", () => {
 
     expect(component.html()).toMatchInlineSnapshot(
       `
-      "<nav class="bg-base-100">
-        <div class="navbar container mx-auto">
+      "<nav class="bg-base-100 border-b">
+        <div class="navbar container p-4 mx-auto">
           <div class="flex-none"><a href="/" class="flex flex-row items-center gap-x-2"><img width="48" height="48" alt="blogzen logo" data-nuxt-img="" srcset="/_ipx/s_48x48/logo.svg 1x, /_ipx/s_96x96/logo.svg 2x" src="/_ipx/s_48x48/logo.svg"><span class="text-3xl font-bold">Blogzen</span></a></div>
           <div class="flex-1 ml-8">
             <form class="" autocomplete="off"><label class="input input-bordered flex items-center gap-2"><input type="search" class="grow" placeholder="What do you search?" name="searchQuery"><kbd class="kbd kbd-sm">Ctrl</kbd><kbd class="kbd kbd-sm">K</kbd></label></form>

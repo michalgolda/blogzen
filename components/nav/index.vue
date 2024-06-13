@@ -1,6 +1,6 @@
 <template>
-  <nav class="bg-base-100">
-    <div class="navbar container mx-auto">
+  <nav class="bg-base-100 border-b">
+    <div class="navbar container p-4 mx-auto">
       <div class="flex-none">
         <Logo />
       </div>

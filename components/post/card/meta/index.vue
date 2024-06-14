@@ -4,6 +4,7 @@
       <PostCardMetaBadge
         icon="tabler:arrow-big-up-line"
         :value="upvotesCount"
+        clickable
       />
       <PostCardMetaBadge icon="tabler:eye" :value="viewsCount" />
     </div>

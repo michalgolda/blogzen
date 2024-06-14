@@ -16,6 +16,21 @@ describe("PostCardMetaBadge component", () => {
     expect(component.text()).toBe("1");
   });
 
+  it("ensure emit events works properly and clickable classes has applied to element", async () => {
+    const component = await mountSuspended(PostCardMetaBadge, {
+      ...commonOptions,
+      attrs: {
+        ...commonOptions.attrs,
+        clickable: true,
+      },
+    });
+
+    component.trigger("click");
+
+    expect(component.emitted("click")).toBeTruthy();
+    expect(component.classes()).toContain("hover:bg-gray-200");
+  });
+
   it("renders unchanged", async () => {
     const component = await mountSuspended(PostCardMetaBadge, commonOptions);
 

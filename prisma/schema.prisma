@@ -1,0 +1,29 @@
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Post {
+    id           String   @id @default(uuid())
+    title        String
+    tldr         String
+    thumbnailUrl String
+    upvotesCount Int      @default(0)
+    viewsCount   Int      @default(0)
+    resourceUrl  String
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @default(now()) @updatedAt
+    tags         Tag[]
+}
+
+model Tag {
+    id        String   @id @default(uuid())
+    name      String   @unique
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now()) @updatedAt
+    Posts     Post[]
+}

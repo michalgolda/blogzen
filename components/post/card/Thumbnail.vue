@@ -1,6 +1,6 @@
 <template>
-  <figure>
-    <NuxtImg class="w-full rounded" :src="src" :alt="alt" fit="fill" />
+  <figure class="rounded">
+    <NuxtImg class="w-full" :src="src" :alt="alt" fit="fill" />
   </figure>
 </template>
 <script setup lang="ts">

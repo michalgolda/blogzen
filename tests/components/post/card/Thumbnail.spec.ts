@@ -28,7 +28,7 @@ describe("PostCardThumbnail component", () => {
     const component = await mountSuspended(PostCardThumbnail, commonOptions);
 
     expect(component.html()).toMatchInlineSnapshot(
-      `"<figure class="rounded"><img alt="thumbnail" data-nuxt-img="" srcset="/_ipx/fit_fill/thumbnail.jpg 1x, /_ipx/fit_fill/thumbnail.jpg 2x" src="/_ipx/fit_fill/thumbnail.jpg" class="w-full"></figure>"`
+      `"<figure class="rounded flex-none"><img alt="thumbnail" data-nuxt-img="" srcset="/_ipx/fit_fill/thumbnail.jpg 1x, /_ipx/fit_fill/thumbnail.jpg 2x" src="/_ipx/fit_fill/thumbnail.jpg" class="w-full"></figure>"`
     );
   });
 });

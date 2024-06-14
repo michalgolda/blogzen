@@ -18,6 +18,7 @@ export default {
         blogzen: {
           ...light,
           primary: "#7D41E2",
+          secondary: "#fc745c",
         },
       },
     ],

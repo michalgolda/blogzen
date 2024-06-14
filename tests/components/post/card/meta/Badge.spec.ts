@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { mountSuspended } from "@nuxt/test-utils/runtime";
 import PostCardMetaBadge from "@@/components/post/card/meta/Badge.vue";
 
-describe("PostCardMetaBadge", () => {
+describe("PostCardMetaBadge component", () => {
   const commonOptions = {
     attrs: {
       icon: "tabler:eye",

@@ -14,7 +14,9 @@ describe("Nav component", () => {
           <div class="flex-1 ml-8">
             <form autocomplete="off"><label class="input input-bordered border-gray-300 flex focus-within:outline-none items-center gap-2"><input class="grow" type="search" placeholder="What do you search?" name="searchQuery"><kbd class="kbd kbd-sm border-gray-300 bg-gray">Ctrl</kbd><kbd class="kbd kbd-sm border-gray-300 bg-gray">K</kbd></label></form>
           </div>
-          <div class="flex flex-row gap-x-2"><button class="btn btn-primary"><span data-v-f2edb3ec="" class="icon" style="font-size: 1em; line-height: 1em; width: 1em; height: 1em;">ph:plus-bold</span> Create new post </button></div>
+          <div class="flex flex-row gap-x-2"><button class="btn btn-primary"><svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 256 256">
+                <path fill="currentColor" d="M228 128a12 12 0 0 1-12 12h-76v76a12 12 0 0 1-24 0v-76H40a12 12 0 0 1 0-24h76V40a12 12 0 0 1 24 0v76h76a12 12 0 0 1 12 12"></path>
+              </svg> Create new post </button></div>
         </div>
       </nav>"
     `

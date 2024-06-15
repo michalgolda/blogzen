@@ -58,9 +58,18 @@ describe("PostCard component", () => {
         </div>
         <div class="flex flex-col flex-1 justify-end gap-2">
           <div class="flex flex-row gap-2">
-            <div class="btn btn-sm flex-1 btn-ghost bg-gray-100 hover:bg-gray-100 hover:bg-gray-200"><span data-v-f2edb3ec="" class="icon text-primary" style="font-size: 1em; line-height: 1em; width: 1em; height: 1em;">tabler:arrow-big-up-line</span> 1</div>
-            <div class="btn btn-sm flex-1 btn-ghost bg-gray-100 hover:bg-gray-100 no-animation"><span data-v-f2edb3ec="" class="icon text-primary" style="font-size: 1em; line-height: 1em; width: 1em; height: 1em;">tabler:eye</span> 2</div>
-          </div><a href="/r/test"><button class="btn w-full btn-sm bg-black text-white hover:bg-black/80 bg-black"> Read post <span data-v-f2edb3ec="" class="icon" style="font-size: 1em; line-height: 1em; width: 1em; height: 1em;">tabler:external-link</span></button></a>
+            <div class="btn btn-sm flex-1 btn-ghost bg-gray-100 hover:bg-gray-100 hover:bg-gray-200"><svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon text-primary" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12H5.414a1 1 0 0 1-.707-1.707l6.586-6.586a1 1 0 0 1 1.414 0l6.586 6.586A1 1 0 0 1 18.586 12H15v6H9zm0 9h6"></path>
+              </svg> 1</div>
+            <div class="btn btn-sm flex-1 btn-ghost bg-gray-100 hover:bg-gray-100 no-animation"><svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon text-primary" width="1em" height="1em" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0"></path>
+                  <path d="M21 12q-3.6 6-9 6t-9-6q3.6-6 9-6t9 6"></path>
+                </g>
+              </svg> 2</div>
+          </div><a href="/r/test"><button class="btn w-full btn-sm bg-black text-white hover:bg-black/80 bg-black"> Read post <svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"></path>
+              </svg></button></a>
         </div>
       </div>"
     `);

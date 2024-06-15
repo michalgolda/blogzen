@@ -14,6 +14,12 @@ importers:
       '@prisma/client':
         specifier: 5.15.0
         version: 5.15.0(prisma@5.15.0)
+      '@vee-validate/nuxt':
+        specifier: ^4.13.1
+        version: 4.13.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5))
+      '@vee-validate/zod':
+        specifier: ^4.13.1
+        version: 4.13.1(vue@3.4.27(typescript@5.4.5))
       nuxt:
         specifier: ^3.12.1
         version: 3.12.1(@opentelemetry/api@1.9.0)(@parcel/watcher@2.4.1)(@types/node@20.14.2)(@unocss/reset@0.61.0)(axios@1.7.2)(encoding@0.1.13)(floating-vue@5.2.2(@nuxt/kit@3.12.1(magicast@0.3.4)(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.18.0)(terser@5.31.1)(typescript@5.4.5)(unocss@0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.0(@types/node@20.14.2)(terser@5.31.1)))(vite@5.3.0(@types/node@20.14.2)(terser@5.31.1))
@@ -26,6 +32,9 @@ importers:
       vue-router:
         specifier: ^4.3.3
         version: 4.3.3(vue@3.4.27(typescript@5.4.5))
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.3.0
@@ -1370,6 +1379,12 @@ packages:
     resolution: {integrity: sha512-gjxLJrja1hqDwdd8z3QvzfMCcKppGqiL2+A6aHwG/AXfEmZMydA50U7VvJK7Wx8/Enm26G6JQrtGrpu+kK3QpQ==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0
+
+  '@vee-validate/nuxt@4.13.1':
+    resolution: {integrity: sha512-dvpXF5t9AvablUJjiZ/88bvgbW41h1ZNtBtIRL79/wEmQCGz1lrViBkSADebz3I7QBXvbWKo1NGEZEKGnP/+Kw==}
+
+  '@vee-validate/zod@4.13.1':
+    resolution: {integrity: sha512-8QLhY1vFNURT5rJF9GK34Rf9I/4Fx7CmF1rWeLEOYDshLzX0IxD6ByVEnIDl96Bu90A3wJSsZiXZNiv/yOyLbQ==}
 
   '@vercel/nft@0.26.5':
     resolution: {integrity: sha512-NHxohEqad6Ra/r4lGknO52uc/GrWILXAMs1BB4401GTqww0fw1bAqzpG1XHuDO+dprg4GvsD9ZLLSsdo78p9hQ==}
@@ -4187,6 +4202,10 @@ packages:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
 
+  type-fest@4.20.0:
+    resolution: {integrity: sha512-MBh+PHUHHisjXf4tlx0CFWoMdjx8zCMLJHOjnV1prABYZFHqtFOyauCIK2/7w4oIfwkF8iNhLtnJEfVY2vn3iw==}
+    engines: {node: '>=16'}
+
   typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
@@ -4345,6 +4364,11 @@ packages:
   validate-npm-package-name@5.0.1:
     resolution: {integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  vee-validate@4.13.1:
+    resolution: {integrity: sha512-JAlUWTBHg0z66n+v66mrtE9IC1xmVCggzpyc7UXCNkizVok8Zgt1VAVjobSxA/0N19Zn6v6hRfjoYciYH/Z11Q==}
+    peerDependencies:
+      vue: ^3.4.26
 
   vite-hot-client@0.2.3:
     resolution: {integrity: sha512-rOGAV7rUlUHX89fP2p2v0A2WWvV3QMX2UYq0fRqsWSvFvev4atHWqjwGoKaZT1VTKyLGk533ecu3eyd0o59CAg==}
@@ -4651,6 +4675,9 @@ packages:
   zip-stream@6.0.1:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
     engines: {node: '>= 14'}
+
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
 snapshots:
 
@@ -6208,6 +6235,25 @@ snapshots:
       vite: 5.3.0(@types/node@20.14.2)(terser@5.31.1)
     transitivePeerDependencies:
       - rollup
+
+  '@vee-validate/nuxt@4.13.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5))':
+    dependencies:
+      '@nuxt/kit': 3.12.1(magicast@0.3.4)(rollup@4.18.0)
+      local-pkg: 0.5.0
+      vee-validate: 4.13.1(vue@3.4.27(typescript@5.4.5))
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+      - vue
+
+  '@vee-validate/zod@4.13.1(vue@3.4.27(typescript@5.4.5))':
+    dependencies:
+      type-fest: 4.20.0
+      vee-validate: 4.13.1(vue@3.4.27(typescript@5.4.5))
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - vue
 
   '@vercel/nft@0.26.5(encoding@0.1.13)':
     dependencies:
@@ -9475,6 +9521,8 @@ snapshots:
 
   type-fest@3.13.1: {}
 
+  type-fest@4.20.0: {}
+
   typescript@5.4.5: {}
 
   ufo@1.5.3: {}
@@ -9673,6 +9721,12 @@ snapshots:
       spdx-expression-parse: 3.0.1
 
   validate-npm-package-name@5.0.1: {}
+
+  vee-validate@4.13.1(vue@3.4.27(typescript@5.4.5)):
+    dependencies:
+      '@vue/devtools-api': 6.6.3
+      type-fest: 4.20.0
+      vue: 3.4.27(typescript@5.4.5)
 
   vite-hot-client@0.2.3(vite@5.3.0(@types/node@20.14.2)(terser@5.31.1)):
     dependencies:
@@ -9980,3 +10034,5 @@ snapshots:
       archiver-utils: 5.0.2
       compress-commons: 6.0.2
       readable-stream: 4.5.2
+
+  zod@3.23.8: {}

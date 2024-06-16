@@ -8,7 +8,7 @@
         <NavSearchForm />
       </div>
       <div class="flex flex-row gap-x-2">
-        <button class="btn btn-primary">
+        <button @click="createPostModal.open()" class="btn btn-primary">
           <Icon name="ph:plus-bold" />
           Create new post
         </button>
@@ -16,3 +16,6 @@
     </div>
   </nav>
 </template>
+<script setup lang="ts">
+const createPostModal = usePostCreateModal();
+</script>

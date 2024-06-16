@@ -57,7 +57,7 @@ describe("PostList component", () => {
       `
       "<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-8">
         <div class="card p-4 shadow-none border w-full bg-base-100">
-          <figure class="rounded flex-none"><img alt="Frontend resources!" data-nuxt-img="" srcset="undefined 1x, undefined 2x" class="w-full"></figure>
+          <figure class="rounded flex-none"><img alt="Frontend resources!" data-nuxt-img="" srcset="/_ipx/fit_fill/thumbnail.webp 1x, /_ipx/fit_fill/thumbnail.webp 2x" src="/_ipx/fit_fill/thumbnail.webp" class="w-full"></figure>
           <div class="my-4 flex-none">
             <div class="flex flex-row gap-2 mb-1">
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
@@ -84,7 +84,7 @@ describe("PostList component", () => {
           </div>
         </div>
         <div class="card p-4 shadow-none border w-full bg-base-100">
-          <figure class="rounded flex-none"><img alt="Frontend resources!" data-nuxt-img="" srcset="undefined 1x, undefined 2x" class="w-full"></figure>
+          <figure class="rounded flex-none"><img alt="Frontend resources!" data-nuxt-img="" srcset="/_ipx/fit_fill/thumbnail.webp 1x, /_ipx/fit_fill/thumbnail.webp 2x" src="/_ipx/fit_fill/thumbnail.webp" class="w-full"></figure>
           <div class="my-4 flex-none">
             <div class="flex flex-row gap-2 mb-1">
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>

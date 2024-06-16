@@ -9,20 +9,40 @@ describe("PostList component", () => {
         {
           title: "Frontend resources!",
           tldr: "A collection of frontend resources for UI creation, performance optimization, and more.",
-          thumbnailSrc: "/thumbnail.webp",
+          thumbnailUrl: "/thumbnail.webp",
           createdAt: new Date(),
           resourceUrl: "/r/asd",
-          tags: ["javascript", "react", "css"],
+          tags: [
+            {
+              name: "javascript",
+            },
+            {
+              name: "react",
+            },
+            {
+              name: "css",
+            },
+          ],
           upvotesCount: 123,
           viewsCount: 64,
         },
         {
           title: "Frontend resources!",
           tldr: "A collection of frontend resources for UI creation, performance optimization, and more.",
-          thumbnailSrc: "/thumbnail.webp",
+          thumbnailUrl: "/thumbnail.webp",
           createdAt: new Date(),
           resourceUrl: "/r/asd",
-          tags: ["javascript", "react", "css"],
+          tags: [
+            {
+              name: "javascript",
+            },
+            {
+              name: "react",
+            },
+            {
+              name: "css",
+            },
+          ],
           upvotesCount: 123,
           viewsCount: 64,
         },
@@ -40,10 +60,10 @@ describe("PostList component", () => {
           <figure class="rounded flex-none"><img alt="Frontend resources!" data-nuxt-img="" srcset="undefined 1x, undefined 2x" class="w-full"></figure>
           <div class="my-4 flex-none">
             <div class="flex flex-row gap-2 mb-1">
-              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #</div>
-              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #</div>
-              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #</div>
-            </div><span class="text-sm text-gray-500">Sat Jun 15 2024</span>
+              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
+              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #react</div>
+              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #css</div>
+            </div><span class="text-sm text-gray-500">Sun Jun 16 2024</span>
             <h3 class="card-title line-clamp-3">Frontend resources!</h3>
             <p class="line-clamp-3 mt-1 text-gray-700">A collection of frontend resources for UI creation, performance optimization, and more.</p>
           </div>
@@ -67,10 +87,10 @@ describe("PostList component", () => {
           <figure class="rounded flex-none"><img alt="Frontend resources!" data-nuxt-img="" srcset="undefined 1x, undefined 2x" class="w-full"></figure>
           <div class="my-4 flex-none">
             <div class="flex flex-row gap-2 mb-1">
-              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #</div>
-              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #</div>
-              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #</div>
-            </div><span class="text-sm text-gray-500">Sat Jun 15 2024</span>
+              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
+              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #react</div>
+              <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #css</div>
+            </div><span class="text-sm text-gray-500">Sun Jun 16 2024</span>
             <h3 class="card-title line-clamp-3">Frontend resources!</h3>
             <p class="line-clamp-3 mt-1 text-gray-700">A collection of frontend resources for UI creation, performance optimization, and more.</p>
           </div>

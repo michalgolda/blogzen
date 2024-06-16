@@ -5,8 +5,13 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-icon",
     "@vee-validate/nuxt",
+    "notivue/nuxt",
   ],
-  css: ["vue-final-modal/style.css"],
+  css: [
+    "vue-final-modal/style.css",
+    "notivue/notification.css",
+    "notivue/animations.css",
+  ],
   devtools: { enabled: true },
   postcss: {
     plugins: {
@@ -19,5 +24,8 @@ export default defineNuxtConfig({
       Field: "VeeField",
       Form: "VeeForm",
     },
+  },
+  notivue: {
+    position: "bottom-center",
   },
 });

@@ -16,6 +16,7 @@
     "@prisma/client": "5.15.0",
     "@vee-validate/nuxt": "^4.13.1",
     "@vee-validate/zod": "^4.13.1",
+    "notivue": "^2.4.4",
     "nuxt": "^3.12.1",
     "vue": "^3.4.27",
     "vue-final-modal": "^4.5.4",

@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { VueFinalModal } from "vue-final-modal";
-import type { DefaultModalEmits } from "./types";
+import type { DefaultModalEmits } from ".";
 
 export interface ModalProps {
   title: string;

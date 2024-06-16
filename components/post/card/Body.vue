@@ -6,10 +6,10 @@
         :key="index"
         class="badge badge-secondary font-semibold rounded text-white border-none gap-2"
       >
-        #{{ tag }}
+        #{{ tag.name }}
       </div>
     </div>
-    <span class="text-sm text-gray-500">{{ createdAt }}</span>
+    <span class="text-sm text-gray-500">{{ createdAt.toDateString() }}</span>
     <h3 class="card-title line-clamp-3">
       {{ title }}
     </h3>
@@ -19,12 +19,11 @@
   </div>
 </template>
 <script setup lang="ts">
-export interface PostCardBodyProps {
-  title: string;
-  tldr: string;
-  tags: string[];
-  createdAt: string;
-}
+import type { Post, Tag } from "@@/main";
+
+export type PostCardBodyProps = Pick<Post, "title" | "tldr" | "createdAt"> & {
+  tags: Pick<Tag, "name">[];
+};
 
 const props = defineProps<PostCardBodyProps>();
 </script>

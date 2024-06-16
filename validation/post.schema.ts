@@ -21,5 +21,4 @@ export const postSchema = z.object({
     .url("The field value must be a valid URL"),
 });
 
-export const createPostSchema = postSchema.required();
-export type CreatePostBody = z.infer<typeof createPostSchema>;
+export type CreatePostBody = z.infer<typeof postSchema>;

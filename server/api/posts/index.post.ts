@@ -1,5 +1,5 @@
 import { prisma } from "@@/prisma/client";
-import { createPostSchema } from "@@/validation/post.schema";
+import { postSchema } from "@@/validation/post.schema";
 import type { CreatePostBody } from "@@/validation/post.schema";
 import { withBodyValidation } from "@@/server/withBodyValidation";
 
@@ -30,5 +30,5 @@ export default withBodyValidation(
 
     return post;
   }),
-  createPostSchema
+  postSchema
 );

@@ -1,10 +1,7 @@
 <template>
   <form autocomplete="off">
-    <label
-      class="input input-bordered border-gray-300 flex focus-within:outline-none items-center gap-2"
-    >
+    <label class="input flex items-center gap-2">
       <input
-        class="grow"
         type="search"
         placeholder="What do you search?"
         name="searchQuery"

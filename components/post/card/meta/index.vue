@@ -9,7 +9,7 @@
       <PostCardMetaBadge icon="tabler:eye" :value="viewsCount" />
     </div>
 
-    <NuxtLink :to="redirectUrl">
+    <NuxtLink :to="redirectUrl" external>
       <button
         class="btn w-full btn-sm bg-black text-white hover:bg-black/80 bg-black"
       >
@@ -28,5 +28,5 @@ export type PostCardMetaProps = Pick<
 
 const props = defineProps<PostCardMetaProps>();
 
-const redirectUrl = computed(() => `/r/${props.redirectCode}`);
+const redirectUrl = computed(() => `/api/redirect/${props.redirectCode}`);
 </script>

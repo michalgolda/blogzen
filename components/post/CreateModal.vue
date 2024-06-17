@@ -40,15 +40,15 @@
           </div>
         </label>
       </VeeField>
-      <VeeField name="resourceUrl" v-slot="{ field, errorMessage }">
+      <VeeField name="sourceUrl" v-slot="{ field, errorMessage }">
         <label class="form-control w-full">
           <div class="label">
-            <span class="label-text font-bold">Resource url</span>
+            <span class="label-text font-bold">Source url</span>
           </div>
           <input
             v-bind="field"
             type="url"
-            name="resourceUrl"
+            name="sourceUrl"
             class="input"
             :class="{ 'input-error': errorMessage }"
           />

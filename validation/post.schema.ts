@@ -13,7 +13,7 @@ export const postSchema = z.object({
     required_error: "This field is required",
     invalid_type_error: "The field value must be a string",
   }),
-  resourceUrl: z
+  sourceUrl: z
     .string({
       required_error: "This field is required",
       invalid_type_error: "The field value must be a string",

@@ -2,6 +2,7 @@ import { prisma } from "@@/prisma/client";
 import { postSchema } from "@@/validation/post.schema";
 import type { CreatePostBody } from "@@/validation/post.schema";
 import { withBodyValidation } from "@@/server/withBodyValidation";
+import { generateRedirectCode } from "@@/utils/redirectCode";
 
 export default withBodyValidation(
   defineEventHandler(async (event) => {
@@ -16,15 +17,21 @@ export default withBodyValidation(
       },
     });
 
+    const sourceUrl = body.sourceUrl;
+    const createdAt = new Date();
+    const redirectCode = generateRedirectCode(sourceUrl, createdAt);
+
     const post = await prisma.post.create({
       data: {
         title: body.title,
         tldr: body.tldr,
-        resourceUrl: body.resourceUrl,
         thumbnailUrl: "/thumbnail.webp",
         tags: {
           connect: existingTags,
         },
+        createdAt,
+        redirectCode,
+        sourceUrl,
       },
     });
 

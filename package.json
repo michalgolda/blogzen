@@ -18,6 +18,7 @@
     "@vee-validate/zod": "^4.13.1",
     "notivue": "^2.4.4",
     "nuxt": "^3.12.1",
+    "pure-rand": "^6.1.0",
     "vue": "^3.4.27",
     "vue-final-modal": "^4.5.4",
     "vue-router": "^4.3.3",

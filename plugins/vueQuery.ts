@@ -17,7 +17,7 @@ export default defineNuxtPlugin((nuxt) => {
     defaultOptions: { queries: { staleTime: 5000 } },
     mutationCache: new MutationCache({
       onSuccess: () => {
-        queryClient.refetchQueries();
+        queryClient.invalidateQueries();
       },
     }),
   });

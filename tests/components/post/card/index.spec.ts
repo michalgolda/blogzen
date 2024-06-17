@@ -21,7 +21,7 @@ describe("PostCard component", () => {
       createdAt: new Date(),
       upvotesCount: 1,
       viewsCount: 2,
-      resourceUrl: "/r/test",
+      redirectCode: "awdawd",
       thumbnailUrl: "/r/test",
     },
   };
@@ -46,7 +46,7 @@ describe("PostCard component", () => {
     expect(meta.exists()).toBeTruthy();
     expect(meta.props("upvotesCount")).toBe(commonOptions.attrs.upvotesCount);
     expect(meta.props("viewsCount")).toBe(commonOptions.attrs.viewsCount);
-    expect(meta.props("resourceUrl")).toBe(commonOptions.attrs.resourceUrl);
+    expect(meta.props("redirectCode")).toBe(commonOptions.attrs.redirectCode);
   });
 
   it("renders unchanged", async () => {
@@ -59,7 +59,7 @@ describe("PostCard component", () => {
           <div class="flex flex-row gap-2 mb-1">
             <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #tag1</div>
             <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #tag2</div>
-          </div><span class="text-sm text-gray-500">Sun Jun 16 2024</span>
+          </div><span class="text-sm text-gray-500">Mon Jun 17 2024</span>
           <h3 class="card-title line-clamp-3">test test</h3>
           <p class="line-clamp-3 mt-1 text-gray-700">test tldr</p>
         </div>
@@ -74,7 +74,7 @@ describe("PostCard component", () => {
                   <path d="M21 12q-3.6 6-9 6t-9-6q3.6-6 9-6t9 6"></path>
                 </g>
               </svg> 2</div>
-          </div><a href="/r/test"><button class="btn w-full btn-sm bg-black text-white hover:bg-black/80 bg-black"> Read post <svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+          </div><a href="/r/awdawd"><button class="btn w-full btn-sm bg-black text-white hover:bg-black/80 bg-black"> Read post <svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"></path>
               </svg></button></a>
         </div>

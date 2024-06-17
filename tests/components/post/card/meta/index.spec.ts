@@ -1,15 +1,14 @@
 import { describe, it, expect } from "vitest";
 import { mountSuspended } from "@nuxt/test-utils/runtime";
-import NuxtLink from "nuxt";
 import PostCardMeta from "@@/components/post/card/meta/index.vue";
 import PostCardMetaBadge from "@@/components/post/card/meta/Badge.vue";
 
-describe("PostCardMeta", () => {
+describe("PostCardMeta component", () => {
   const commonOptions = {
     attrs: {
       upvotesCount: 1,
       viewsCount: 2,
-      resourceUrl: "/r/test",
+      redirectCode: "qwerty",
     },
   };
 
@@ -28,7 +27,7 @@ describe("PostCardMeta", () => {
     expect(link.exists()).toBeTruthy();
     expect(link.element).toHaveProperty(
       "href",
-      `http://localhost:3000${commonOptions.attrs.resourceUrl}`
+      `http://localhost:3000/r/${commonOptions.attrs.redirectCode}`
     );
   });
 
@@ -47,7 +46,7 @@ describe("PostCardMeta", () => {
                 <path d="M21 12q-3.6 6-9 6t-9-6q3.6-6 9-6t9 6"></path>
               </g>
             </svg> 2</div>
-        </div><a href="/r/test"><button class="btn w-full btn-sm bg-black text-white hover:bg-black/80 bg-black"> Read post <svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
+        </div><a href="/r/qwerty"><button class="btn w-full btn-sm bg-black text-white hover:bg-black/80 bg-black"> Read post <svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 24 24">
               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"></path>
             </svg></button></a>
       </div>"

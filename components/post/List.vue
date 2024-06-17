@@ -9,7 +9,7 @@
       :tldr="post.tldr"
       :created-at="post.createdAt"
       :thumbnail-url="post.thumbnailUrl"
-      :resource-url="post.resourceUrl"
+      :redirect-code="post.redirectCode"
       :upvotes-count="post.upvotesCount"
       :views-count="post.viewsCount"
       :tags="post.tags"

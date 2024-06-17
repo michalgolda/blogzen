@@ -52,7 +52,7 @@ describe("PostCardBody component", () => {
         <div class="flex flex-row gap-2 mb-1">
           <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #tag1</div>
           <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #tag2</div>
-        </div><span class="text-sm text-gray-500">Sun Jun 16 2024</span>
+        </div><span class="text-sm text-gray-500">Mon Jun 17 2024</span>
         <h3 class="card-title line-clamp-3">test test</h3>
         <p class="line-clamp-3 mt-1 text-gray-700">test tldr</p>
       </div>"

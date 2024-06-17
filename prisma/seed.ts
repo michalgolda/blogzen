@@ -1,5 +1,6 @@
 import { prisma } from "./client";
 import { faker } from "@faker-js/faker";
+import { generateRedirectCode } from "@@/utils/redirectCode";
 
 const DEFAULT_POSTS_COUNT = 25;
 const DEFAULT_TAG_NAMES = [
@@ -27,6 +28,9 @@ const postSeed = async () => {
   for (let i = 0; i < DEFAULT_POSTS_COUNT; i++) {
     const firstTagName = getRandomTagName();
     const secondTagName = getRandomTagName();
+    const sourceUrl = faker.internet.url();
+    const createdAt = new Date();
+    const redirectCode = generateRedirectCode(sourceUrl, createdAt);
 
     promises.push(
       prisma.post.create({
@@ -36,7 +40,7 @@ const postSeed = async () => {
           thumbnailUrl: "/thumbnail.webp",
           upvotesCount: faker.number.int({ min: 0, max: 9999 }),
           viewsCount: faker.number.int({ min: 0, max: 9999 }),
-          resourceUrl: faker.internet.url(),
+          sourceUrl: faker.internet.url(),
           tags: {
             connectOrCreate: [
               {
@@ -57,6 +61,8 @@ const postSeed = async () => {
               },
             ],
           },
+          redirectCode,
+          createdAt,
         },
       })
     );

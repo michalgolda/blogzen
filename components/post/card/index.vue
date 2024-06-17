@@ -10,16 +10,14 @@
     <PostCardMeta
       :upvotesCount="upvotesCount"
       :viewsCount="viewsCount"
-      :resourceUrl="resourceUrl"
+      :redirect-code="redirectCode"
     />
   </div>
 </template>
 <script setup lang="ts">
-import type { Post, Tag } from "@@/main";
+import type { Post } from "@@/main";
 
-type PostCardProps = Omit<Post, "id" | "updatedAt"> & {
-  tags: Tag[];
-};
+type PostCardProps = Omit<Post, "id" | "updatedAt" | "sourceUrl">;
 
 const props = defineProps<PostCardProps>();
 </script>

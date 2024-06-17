@@ -12,7 +12,8 @@ export type Post = {
   thumbnailUrl: string;
   upvotesCount: number;
   viewsCount: number;
-  resourceUrl: string;
+  sourceUrl: string;
+  redirectCode: string;
   createdAt: Date;
   updatedAt: Date;
   tags: Tag[];

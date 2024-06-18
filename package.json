@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "build:cloud": "nuxt build && prisma migrate deploy",
+    "build:cloud": "prisma generate && nuxt build && prisma migrate deploy",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

@@ -17,7 +17,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import type { Post } from "@@/main";
+import type { Post } from "@@/client";
 
 export interface PostListProps {
   data: Post[];

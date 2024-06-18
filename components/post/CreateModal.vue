@@ -63,7 +63,7 @@
             <span class="label-text font-bold">Tags</span>
           </div>
           <span
-            v-if="!tagsData"
+            v-if="tagsIsLoading"
             class="skeleton rounded h-16 w-full bg-gray-100"
           ></span>
           <select
@@ -75,7 +75,7 @@
             multiple
           >
             <option disabled selected>Select tags</option>
-            <option v-for="tag in tagsData" :key="tag.id" :value="tag.id">
+            <option v-for="tag in tags" :key="tag.id" :value="tag.id">
               {{ tag.name }}
             </option>
           </select>
@@ -89,31 +89,18 @@
   </Modal>
 </template>
 <script setup lang="ts">
-import { push } from "notivue";
 import type { DefaultModalEmits } from "../modal";
 import { postSchema, type CreatePostBody } from "@@/validation/post.schema";
 
-const validationSchema = toTypedSchema(postSchema);
+const { data: tags, isLoading: tagsIsLoading } = useGetAllTagsQuery();
+const createPostMutation = useCreatePostMutation();
 
-const { data: tagsData } = await useLazyFetch("/api/tags");
+const validationSchema = toTypedSchema(postSchema);
 
 const emits = defineEmits<DefaultModalEmits>();
 
-const successCallback = () => {
-  push.success("Post created successfully");
-  emits("close");
-};
-
-const errorCallback = () => {
-  push.error("Something went wrong, please try again");
-  emits("close");
-};
-
-const handleSubmit = async (values: CreatePostBody) =>
-  await $fetch("/api/posts", {
-    method: "POST",
-    body: values,
-  })
-    .then(successCallback)
-    .catch(errorCallback);
+const handleSubmit = (values: CreatePostBody) =>
+  createPostMutation.mutate(values, {
+    onSettled: () => emits("close"),
+  });
 </script>

@@ -10,7 +10,7 @@ describe("PostList component", () => {
           title: "Frontend resources!",
           tldr: "A collection of frontend resources for UI creation, performance optimization, and more.",
           thumbnailUrl: "/thumbnail.webp",
-          createdAt: new Date(),
+          createdAt: new Date().toISOString(),
           sourceUrl: "/r/asd",
           redirectCode: "qwerty",
           tags: [
@@ -31,7 +31,7 @@ describe("PostList component", () => {
           title: "Frontend resources!",
           tldr: "A collection of frontend resources for UI creation, performance optimization, and more.",
           thumbnailUrl: "/thumbnail.webp",
-          createdAt: new Date(),
+          createdAt: new Date().toISOString(),
           sourceUrl: "/r/asd",
           redirectCode: "qwerty",
           tags: [
@@ -65,7 +65,7 @@ describe("PostList component", () => {
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #react</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #css</div>
-            </div><span class="text-sm text-gray-500">Mon Jun 17 2024</span>
+            </div><span class="text-sm text-gray-500">Tue Jun 18 2024</span>
             <h3 class="card-title line-clamp-3">Frontend resources!</h3>
             <p class="line-clamp-3 mt-1 text-gray-700">A collection of frontend resources for UI creation, performance optimization, and more.</p>
           </div>
@@ -92,7 +92,7 @@ describe("PostList component", () => {
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #react</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #css</div>
-            </div><span class="text-sm text-gray-500">Mon Jun 17 2024</span>
+            </div><span class="text-sm text-gray-500">Tue Jun 18 2024</span>
             <h3 class="card-title line-clamp-3">Frontend resources!</h3>
             <p class="line-clamp-3 mt-1 text-gray-700">A collection of frontend resources for UI creation, performance optimization, and more.</p>
           </div>

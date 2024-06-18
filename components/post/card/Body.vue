@@ -9,7 +9,7 @@
         #{{ tag.name }}
       </div>
     </div>
-    <span class="text-sm text-gray-500">{{ createdAt.toDateString() }}</span>
+    <span class="text-sm text-gray-500">{{ formatCreatedAtDatetime() }}</span>
     <h3 class="card-title line-clamp-3">
       {{ title }}
     </h3>
@@ -19,11 +19,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import type { Post, Tag } from "@@/main";
+import type { Post, Tag } from "@@/client";
 
 export type PostCardBodyProps = Pick<Post, "title" | "tldr" | "createdAt"> & {
   tags: Pick<Tag, "name">[];
 };
 
 const props = defineProps<PostCardBodyProps>();
+
+const formatCreatedAtDatetime = () => new Date(props.createdAt).toDateString();
 </script>

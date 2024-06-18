@@ -1,20 +1,8 @@
 <template>
-  <PostList :data="data" />
+  <PostList v-if="data" :data="data" />
 </template>
 <script setup lang="ts">
-import { prisma } from "@@/prisma/client";
+const { data, suspense } = useGetAllPostsQuery();
 
-const { data } = await useLazyAsyncData(
-  "posts",
-  async () =>
-    await prisma.post.findMany({
-      include: {
-        tags: {
-          select: {
-            name: true,
-          },
-        },
-      },
-    })
-);
+await suspense();
 </script>

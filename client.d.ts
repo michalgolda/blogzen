@@ -1,8 +1,8 @@
 export type Tag = {
   id: string;
   name: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type Post = {
@@ -14,7 +14,7 @@ export type Post = {
   viewsCount: number;
   sourceUrl: string;
   redirectCode: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
   tags: Tag[];
 };

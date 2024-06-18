@@ -15,7 +15,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import type { Post } from "@@/main";
+import type { Post } from "@@/client";
 
 type PostCardProps = Omit<Post, "id" | "updatedAt" | "sourceUrl">;
 

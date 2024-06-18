@@ -19,7 +19,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import type { Post } from "@@/main";
+import type { Post } from "@@/client";
 
 export type PostCardMetaProps = Pick<
   Post,

@@ -1,11 +1,18 @@
-import { describe, it, expect } from "vitest";
-import { mountSuspended } from "@nuxt/test-utils/runtime";
+import { describe, it, expect, vi } from "vitest";
+import { mountSuspended, mockNuxtImport } from "@nuxt/test-utils/runtime";
 import PostCardMeta from "@@/components/post/card/meta/index.vue";
 import PostCardMetaBadge from "@@/components/post/card/meta/Badge.vue";
+
+const mutateMock = vi.fn();
+
+mockNuxtImport("useUpvotePostMutation", () => () => ({
+  mutate: mutateMock,
+}));
 
 describe("PostCardMeta component", () => {
   const commonOptions = {
     attrs: {
+      id: "1",
       upvotesCount: 1,
       viewsCount: 2,
       redirectCode: "qwerty",
@@ -21,7 +28,10 @@ describe("PostCardMeta component", () => {
     const viewsBadge = badges[1];
 
     expect(badges.length).toBe(2);
+
     expect(upvotesBadge.props("value")).toBe(commonOptions.attrs.upvotesCount);
+    expect(upvotesBadge.props("clickable")).toBeTruthy();
+
     expect(viewsBadge.props("value")).toBe(commonOptions.attrs.viewsCount);
 
     expect(link.exists()).toBeTruthy();
@@ -29,6 +39,19 @@ describe("PostCardMeta component", () => {
       "href",
       `http://localhost:3000/api/redirect/${commonOptions.attrs.redirectCode}`
     );
+  });
+
+  it("ensure upvote after click on upvotes badge works properly", async () => {
+    const component = await mountSuspended(PostCardMeta, commonOptions);
+
+    const badges = component.findAllComponents(PostCardMetaBadge);
+    const upvotesBadge = badges[0];
+
+    expect(upvotesBadge.exists()).toBeTruthy();
+
+    upvotesBadge.trigger("click");
+
+    expect(mutateMock).toHaveBeenCalledWith(commonOptions.attrs.id);
   });
 
   it("renders unchanged", async () => {

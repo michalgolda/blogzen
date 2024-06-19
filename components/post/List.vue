@@ -5,6 +5,7 @@
     <PostCard
       v-for="(post, index) in data"
       :key="index"
+      :id="post.id"
       :title="post.title"
       :tldr="post.tldr"
       :created-at="post.createdAt"

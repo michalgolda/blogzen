@@ -4,6 +4,7 @@
       <PostCardMetaBadge
         icon="tabler:arrow-big-up-line"
         :value="upvotesCount"
+        @click="handleUpvote"
         clickable
       />
       <PostCardMetaBadge icon="tabler:eye" :value="viewsCount" />
@@ -23,10 +24,14 @@ import type { Post } from "@@/client";
 
 export type PostCardMetaProps = Pick<
   Post,
-  "redirectCode" | "upvotesCount" | "viewsCount"
+  "id" | "redirectCode" | "upvotesCount" | "viewsCount"
 >;
 
 const props = defineProps<PostCardMetaProps>();
+
+const upvotePostMutation = useUpvotePostMutation();
+
+const handleUpvote = () => upvotePostMutation.mutate(props.id);
 
 const redirectUrl = computed(() => `/api/redirect/${props.redirectCode}`);
 </script>

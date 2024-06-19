@@ -7,6 +7,7 @@ describe("PostList component", () => {
     attrs: {
       data: [
         {
+          id: "1",
           title: "Frontend resources!",
           tldr: "A collection of frontend resources for UI creation, performance optimization, and more.",
           thumbnailUrl: "/thumbnail.webp",
@@ -28,6 +29,7 @@ describe("PostList component", () => {
           viewsCount: 64,
         },
         {
+          id: "2",
           title: "Frontend resources!",
           tldr: "A collection of frontend resources for UI creation, performance optimization, and more.",
           thumbnailUrl: "/thumbnail.webp",
@@ -65,7 +67,7 @@ describe("PostList component", () => {
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #react</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #css</div>
-            </div><span class="text-sm text-gray-500">Tue Jun 18 2024</span>
+            </div><span class="text-sm text-gray-500">Wed Jun 19 2024</span>
             <h3 class="card-title line-clamp-3">Frontend resources!</h3>
             <p class="line-clamp-3 mt-1 text-gray-700">A collection of frontend resources for UI creation, performance optimization, and more.</p>
           </div>
@@ -92,7 +94,7 @@ describe("PostList component", () => {
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #react</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #css</div>
-            </div><span class="text-sm text-gray-500">Tue Jun 18 2024</span>
+            </div><span class="text-sm text-gray-500">Wed Jun 19 2024</span>
             <h3 class="card-title line-clamp-3">Frontend resources!</h3>
             <p class="line-clamp-3 mt-1 text-gray-700">A collection of frontend resources for UI creation, performance optimization, and more.</p>
           </div>

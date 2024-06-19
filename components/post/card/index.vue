@@ -8,6 +8,7 @@
       :tags="tags"
     />
     <PostCardMeta
+      :id="id"
       :upvotesCount="upvotesCount"
       :viewsCount="viewsCount"
       :redirect-code="redirectCode"
@@ -17,7 +18,7 @@
 <script setup lang="ts">
 import type { Post } from "@@/client";
 
-type PostCardProps = Omit<Post, "id" | "updatedAt" | "sourceUrl">;
+type PostCardProps = Omit<Post, "updatedAt" | "sourceUrl">;
 
 const props = defineProps<PostCardProps>();
 </script>

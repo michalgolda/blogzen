@@ -46,6 +46,8 @@
   </nav>
 </template>
 <script setup lang="ts">
+import { push } from "notivue";
+
 const createPostModal = usePostCreateModal();
 const supabaseClient = useClientSideSupabaseClient();
 
@@ -56,5 +58,8 @@ export type NavProps = {
 const props = defineProps<NavProps>();
 
 const handleLogut = async () =>
-  await supabaseClient.auth.signOut().then(() => window.location.reload());
+  await supabaseClient.auth.signOut().then(() => {
+    push.success("Successfully logged out");
+    window.location.reload();
+  });
 </script>

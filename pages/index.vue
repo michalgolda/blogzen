@@ -1,5 +1,7 @@
 <template>
-  <PostList v-if="data" :data="data" />
+  <NuxtLayout name="main">
+    <PostList v-if="data" :data="data" />
+  </NuxtLayout>
 </template>
 <script setup lang="ts">
 const { data, suspense } = useGetAllPostsQuery();

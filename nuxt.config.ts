@@ -28,4 +28,11 @@ export default defineNuxtConfig({
   notivue: {
     position: "bottom-center",
   },
+  runtimeConfig: {
+    public: {
+      sessionCookieName: "session",
+      supabaseUrl: process.env.NUXT_SUPABASE_URL,
+      supabaseAnonKey: process.env.NUXT_SUPABASE_ANON_KEY,
+    },
+  },
 });

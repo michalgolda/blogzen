@@ -71,7 +71,17 @@ const validationSchema = toTypedSchema(signInSchema);
 const supabaseClient = useClientSideSupabaseClient();
 
 const handleSubmit = async (data: SignInBody) =>
-  await supabaseClient.auth
-    .signInWithPassword(data)
-    .then(async () => await navigateTo("/"));
+  await supabaseClient.auth.signInWithPassword(data).then(async ({ error }) => {
+    const isOk = !error;
+    const isUnexpectedError = error ? error.status === 500 : false;
+
+    if (isOk) {
+      push.success("Successfully logged in");
+      await navigateTo("/");
+    }
+
+    isUnexpectedError &&
+      push.error("Something went wrong, please try again later");
+    !isUnexpectedError && !isOk && push.info(error.message);
+  });
 </script>

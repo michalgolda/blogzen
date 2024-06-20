@@ -1,5 +1,9 @@
 <template>
-  <Modal @close="$emit('close')" title="Create new post">
+  <Modal
+    @close="$emit('close')"
+    title="Create new post"
+    :validation-schema="validationSchema"
+  >
     <VeeForm class="flex flex-col gap-y-2" @submit="handleSubmit">
       <label class="form-control w-full">
         <div class="label">
@@ -12,9 +16,6 @@
           name="thumbnailFile"
           class="file-input input w-full p-0"
         />
-        <div v-if="errorMessage" class="label">
-          <span class="label-text-alt text-error">{{ errorMessage }}</span>
-        </div>
       </label>
 
       <VeeField name="title" v-slot="{ field, errorMessage }">

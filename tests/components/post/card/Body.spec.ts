@@ -3,7 +3,7 @@ import { mountSuspended } from "@nuxt/test-utils/runtime";
 import PostCardBody from "@@/components/post/card/Body.vue";
 
 describe("PostCardBody component", () => {
-  const date = new Date();
+  const date = new Date("1995-12-17T03:24:00");
   const commonOptions = {
     attrs: {
       title: "test test",
@@ -53,7 +53,7 @@ describe("PostCardBody component", () => {
         <div class="flex flex-row gap-2 mb-1">
           <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #tag1</div>
           <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #tag2</div>
-        </div><span class="text-sm text-gray-500">Wed Jun 19 2024</span>
+        </div><span class="text-sm text-gray-500">Sun Dec 17 1995</span>
         <h3 class="card-title line-clamp-3">test test</h3>
         <p class="line-clamp-3 mt-1 text-gray-700">test tldr</p>
       </div>"

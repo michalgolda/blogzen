@@ -3,6 +3,8 @@ import { mountSuspended } from "@nuxt/test-utils/runtime";
 import PostList from "@@/components/post/List.vue";
 
 describe("PostList component", () => {
+  const date = new Date("1995-12-17T03:24:00");
+
   const commonOptions = {
     attrs: {
       data: [
@@ -11,7 +13,7 @@ describe("PostList component", () => {
           title: "Frontend resources!",
           tldr: "A collection of frontend resources for UI creation, performance optimization, and more.",
           thumbnailUrl: "/thumbnail.webp",
-          createdAt: new Date().toISOString(),
+          createdAt: date.toISOString(),
           sourceUrl: "/r/asd",
           redirectCode: "qwerty",
           tags: [
@@ -33,7 +35,7 @@ describe("PostList component", () => {
           title: "Frontend resources!",
           tldr: "A collection of frontend resources for UI creation, performance optimization, and more.",
           thumbnailUrl: "/thumbnail.webp",
-          createdAt: new Date().toISOString(),
+          createdAt: date.toISOString(),
           sourceUrl: "/r/asd",
           redirectCode: "qwerty",
           tags: [
@@ -67,7 +69,7 @@ describe("PostList component", () => {
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #react</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #css</div>
-            </div><span class="text-sm text-gray-500">Wed Jun 19 2024</span>
+            </div><span class="text-sm text-gray-500">Sun Dec 17 1995</span>
             <h3 class="card-title line-clamp-3">Frontend resources!</h3>
             <p class="line-clamp-3 mt-1 text-gray-700">A collection of frontend resources for UI creation, performance optimization, and more.</p>
           </div>
@@ -94,7 +96,7 @@ describe("PostList component", () => {
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #javascript</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #react</div>
               <div class="badge badge-secondary font-semibold rounded text-white border-none gap-2"> #css</div>
-            </div><span class="text-sm text-gray-500">Wed Jun 19 2024</span>
+            </div><span class="text-sm text-gray-500">Sun Dec 17 1995</span>
             <h3 class="card-title line-clamp-3">Frontend resources!</h3>
             <p class="line-clamp-3 mt-1 text-gray-700">A collection of frontend resources for UI creation, performance optimization, and more.</p>
           </div>

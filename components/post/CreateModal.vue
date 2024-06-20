@@ -1,10 +1,22 @@
 <template>
   <Modal @close="$emit('close')" title="Create new post">
-    <VeeForm
-      class="flex flex-col gap-y-2"
-      :validation-schema="validationSchema"
-      @submit="handleSubmit"
-    >
+    <VeeForm class="flex flex-col gap-y-2" @submit="handleSubmit">
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text font-bold">Thumbnail</span>
+        </div>
+        <input
+          type="file"
+          @change="thumbnailFileField.handleChange"
+          @blur="thumbnailFileField.handleBlur"
+          name="thumbnailFile"
+          class="file-input input w-full p-0"
+        />
+        <div v-if="errorMessage" class="label">
+          <span class="label-text-alt text-error">{{ errorMessage }}</span>
+        </div>
+      </label>
+
       <VeeField name="title" v-slot="{ field, errorMessage }">
         <label class="form-control w-full">
           <div class="label">
@@ -94,13 +106,38 @@ import { postSchema, type CreatePostBody } from "@@/validation/post.schema";
 
 const { data: tags, isLoading: tagsIsLoading } = useGetAllTagsQuery();
 const createPostMutation = useCreatePostMutation();
+const thumbnailFileField = useField<File>("thumbnailFile");
+const supabaseClient = useClientSideSupabaseClient();
 
 const validationSchema = toTypedSchema(postSchema);
 
 const emits = defineEmits<DefaultModalEmits>();
 
-const handleSubmit = (values: CreatePostBody) =>
-  createPostMutation.mutate(values, {
-    onSettled: () => emits("close"),
-  });
+const handleSubmit = async (values: CreatePostBody) => {
+  const thumbnailFile = thumbnailFileField.value.value;
+  const thumbnailFileName = thumbnailFile.name;
+  const thumbnailFileType = thumbnailFile.type;
+
+  await supabaseClient.storage
+    .from("post-thumbnails")
+    .upload(thumbnailFileName, thumbnailFile, {
+      upsert: true,
+      contentType: thumbnailFileType,
+    })
+    .then(async () => {
+      const thumbnailUrl = supabaseClient.storage
+        .from("post-thumbnails")
+        .getPublicUrl(thumbnailFileName).data.publicUrl;
+
+      createPostMutation.mutate(
+        {
+          ...values,
+          thumbnailUrl,
+        },
+        {
+          onSettled: () => emits("close"),
+        }
+      );
+    });
+};
 </script>

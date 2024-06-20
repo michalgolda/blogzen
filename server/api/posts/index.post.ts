@@ -1,7 +1,7 @@
 import { prisma } from "@@/prisma/client";
 import { postSchema } from "@@/validation/post.schema";
 import type { CreatePostBody } from "@@/validation/post.schema";
-import { withBodyValidation } from "@@/server/withBodyValidation";
+import { withBodyValidation } from "@@/server/utils/validation/withBodyValidation";
 import { generateRedirectCode } from "@@/utils/redirectCode";
 
 export default withBodyValidation(
@@ -25,7 +25,7 @@ export default withBodyValidation(
       data: {
         title: body.title,
         tldr: body.tldr,
-        thumbnailUrl: "/thumbnail.webp",
+        thumbnailUrl: body.thumbnailUrl,
         tags: {
           connect: existingTags,
         },

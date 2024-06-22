@@ -7,7 +7,7 @@ describe("SearchForm component", () => {
     const component = await mountSuspended(SearchForm);
 
     expect(component.html()).toMatchInlineSnapshot(
-      `"<form autocomplete="off"><label class="input flex items-center gap-2"><input type="search" placeholder="What do you search?" name="searchQuery"><kbd class="kbd kbd-sm border-gray-300 bg-gray">Ctrl</kbd><kbd class="kbd kbd-sm border-gray-300 bg-gray">K</kbd></label></form>"`
+      `"<form autocomplete="off"><label class="input flex items-center gap-2"><input type="search" placeholder="What do you search?" name="search"><kbd class="kbd kbd-sm border-gray-300 bg-gray">Ctrl</kbd><kbd class="kbd kbd-sm border-gray-300 bg-gray">K</kbd></label></form>"`
     );
   });
 });

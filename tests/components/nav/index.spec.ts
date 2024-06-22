@@ -60,7 +60,7 @@ describe("Nav component", () => {
         <div class="navbar container p-4 mx-auto">
           <div class="flex-none"><a href="/" class="flex flex-row items-center gap-x-2"><img width="48" height="48" alt="blogzen logo" data-nuxt-img="" srcset="/_ipx/s_48x48/logo.svg 1x, /_ipx/s_96x96/logo.svg 2x" src="/_ipx/s_48x48/logo.svg"><span class="text-3xl font-bold">Blogzen</span></a></div>
           <div class="flex-1 ml-8">
-            <form autocomplete="off"><label class="input flex items-center gap-2"><input type="search" placeholder="What do you search?" name="searchQuery"><kbd class="kbd kbd-sm border-gray-300 bg-gray">Ctrl</kbd><kbd class="kbd kbd-sm border-gray-300 bg-gray">K</kbd></label></form>
+            <form autocomplete="off"><label class="input flex items-center gap-2"><input type="search" placeholder="What do you search?" name="search"><kbd class="kbd kbd-sm border-gray-300 bg-gray">Ctrl</kbd><kbd class="kbd kbd-sm border-gray-300 bg-gray">K</kbd></label></form>
           </div>
           <div class="flex flex-row gap-x-2"><a href="/auth/signin"><button class="btn btn-primary btn-outline">Sign in</button></a><a href="/auth/signup"><button class="btn btn-primary btn">Sign up</button></a></div>
         </div>
@@ -77,7 +77,7 @@ describe("Nav component", () => {
         <div class="navbar container p-4 mx-auto">
           <div class="flex-none"><a href="/" class="flex flex-row items-center gap-x-2"><img width="48" height="48" alt="blogzen logo" data-nuxt-img="" srcset="/_ipx/s_48x48/logo.svg 1x, /_ipx/s_96x96/logo.svg 2x" src="/_ipx/s_48x48/logo.svg"><span class="text-3xl font-bold">Blogzen</span></a></div>
           <div class="flex-1 ml-8">
-            <form autocomplete="off"><label class="input flex items-center gap-2"><input type="search" placeholder="What do you search?" name="searchQuery"><kbd class="kbd kbd-sm border-gray-300 bg-gray">Ctrl</kbd><kbd class="kbd kbd-sm border-gray-300 bg-gray">K</kbd></label></form>
+            <form autocomplete="off"><label class="input flex items-center gap-2"><input type="search" placeholder="What do you search?" name="search"><kbd class="kbd kbd-sm border-gray-300 bg-gray">Ctrl</kbd><kbd class="kbd kbd-sm border-gray-300 bg-gray">K</kbd></label></form>
           </div>
           <div class="flex flex-row gap-x-2">
             <div class="flex flex-row gap-x-2 items-center"><button class="btn btn-primary mr-2" aria-label="create-post"><svg data-v-f2edb3ec="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 256 256">

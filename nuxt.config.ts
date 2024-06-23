@@ -1,3 +1,5 @@
+import { getRedirectUrl } from "./utils/getRedirectUrl";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -33,6 +35,7 @@ export default defineNuxtConfig({
       sessionCookieName: "session",
       supabaseUrl: process.env.NUXT_SUPABASE_URL,
       supabaseAnonKey: process.env.NUXT_SUPABASE_ANON_KEY,
+      redirectTo: getRedirectUrl(),
     },
   },
 });

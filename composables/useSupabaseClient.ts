@@ -1,18 +1,25 @@
+import type { CookieOptions } from "#app";
 import { createBrowserClient } from "@@/utils/supabase/browser";
 import { createServerClient } from "@@/utils/supabase/server";
 
 export const useServerSideSupabaseClient = () => {
-  const runtimeConfig = useRuntimeConfig();
-  const cookie = useCookie(runtimeConfig.public.sessionCookieName);
+  const nuxtApp = useNuxtApp();
+  const $useCookie = async (name: string, options?: CookieOptions) =>
+    await nuxtApp.runWithContext(() => useCookie(name));
 
   return createServerClient({
-    get: () => {
+    get: async (name: string) => {
+      const cookie = await $useCookie(name);
       return cookie.value;
     },
-    set: (value: string) => {
+    set: async (name: string, value: string) => {
+      const cookie = await $useCookie(name);
       cookie.value = value;
     },
-    remove() {
+    remove: async (name: string) => {
+      const cookie = await $useCookie(name, {
+        maxAge: -1,
+      });
       cookie.value = "";
     },
   });

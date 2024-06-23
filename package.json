@@ -16,7 +16,7 @@
     "@nuxt/image": "^1.7.0",
     "@prisma/client": "5.15.0",
     "@supabase/ssr": "^0.3.0",
-    "@supabase/supabase-js": "^2.43.5",
+    "@supabase/supabase-js": "^2.43.3",
     "@tanstack/vue-query": "^5.45.0",
     "@vee-validate/nuxt": "^4.13.1",
     "@vee-validate/zod": "^4.13.1",

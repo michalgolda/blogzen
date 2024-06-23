@@ -12,7 +12,7 @@
       <VeeForm
         class="flex flex-col gap-y-2"
         :validation-schema="validationSchema"
-        @submit="handleSubmit"
+        @submit="handleSignInWithEmailAndPassword"
       >
         <VeeField name="email" v-slot="{ field, errorMessage }">
           <label class="form-control w-full">
@@ -60,28 +60,45 @@
           Sign up
         </NuxtLink>
       </span>
+      <div
+        class="divider before:bg-gray-300 after:bg-gray-300 font-semibold text-gray-700"
+      >
+        OR
+      </div>
+      <div class="flex flex-row gap-x-2">
+        <button
+          class="btn hover:bg-black/80 bg-black text-white flex-1"
+          type="button"
+          @click="handleSignInWithGithub"
+        >
+          <Icon name="mdi:github" size="2rem" />
+          Login with Github
+        </button>
+        <button
+          class="btn hover:bg-gray-100 border bg-white text-black flex-1"
+          type="button"
+          @click="handleSignInWithGoogle"
+        >
+          <Icon name="devicon:google" size="1.5rem" />
+          Login with Google
+        </button>
+      </div>
     </template>
   </NuxtLayout>
 </template>
 <script setup lang="ts">
 import { signInSchema, type SignInBody } from "@@/validation/user.schema";
 
+const signInWithEmailAndPassword = useSignInWithEmailAndPassword();
+const signInWithGithub = useSignInWithGithub();
+const signInWithGoogle = useSignInWithGoogle();
+
 const validationSchema = toTypedSchema(signInSchema);
 
-const supabaseClient = useClientSideSupabaseClient();
+const handleSignInWithEmailAndPassword = async (data: SignInBody) =>
+  await signInWithEmailAndPassword(data);
 
-const handleSubmit = async (data: SignInBody) =>
-  await supabaseClient.auth.signInWithPassword(data).then(async ({ error }) => {
-    const isOk = !error;
-    const isUnexpectedError = error ? error.status === 500 : false;
+const handleSignInWithGithub = async () => await signInWithGithub();
 
-    if (isOk) {
-      push.success("Successfully logged in");
-      await navigateTo("/");
-    }
-
-    isUnexpectedError &&
-      push.error("Something went wrong, please try again later");
-    !isUnexpectedError && !isOk && push.info(error.message);
-  });
+const handleSignInWithGoogle = async () => await signInWithGoogle();
 </script>

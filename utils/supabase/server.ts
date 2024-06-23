@@ -11,6 +11,9 @@ export const createServerClient = (cookies: CookieMethods) => {
     runtimeConfig.public.supabaseAnonKey,
     {
       cookies,
+      cookieOptions: {
+        name: runtimeConfig.public.sessionCookieName,
+      },
     }
   );
 };

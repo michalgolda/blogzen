@@ -18,7 +18,7 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0(@supabase/supabase-js@2.43.5)
       '@supabase/supabase-js':
-        specifier: ^2.43.5
+        specifier: ^2.43.3
         version: 2.43.5
       '@tanstack/vue-query':
         specifier: ^5.45.0

@@ -1,6 +1,5 @@
 export const getRedirectUrl = () => {
-  let url: string | undefined =
-    process?.env?.NUXT_PUBLIC_SITE_URL ?? process?.env?.NUXT_PUBLIC_VERCEL_URL;
+  let url: string | undefined = process?.env?.VERCEL_PROJECT_PRODUCTION_URL;
 
   if (url) {
     url = url.startsWith("http") ? url : `https://${url}`;

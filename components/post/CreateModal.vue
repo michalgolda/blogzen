@@ -116,29 +116,36 @@ const emits = defineEmits<DefaultModalEmits>();
 
 const handleSubmit = async (values: CreatePostBody) => {
   const thumbnailFile = thumbnailFileField.value.value;
-  const thumbnailFileName = thumbnailFile.name;
-  const thumbnailFileType = thumbnailFile.type;
+  const thumbnailFileUrl = ref<string | null>(null);
 
-  await supabaseClient.storage
-    .from("post-thumbnails")
-    .upload(thumbnailFileName, thumbnailFile, {
-      upsert: true,
-      contentType: thumbnailFileType,
-    })
-    .then(async () => {
-      const thumbnailUrl = supabaseClient.storage
-        .from("post-thumbnails")
-        .getPublicUrl(thumbnailFileName).data.publicUrl;
+  if (thumbnailFile) {
+    const thumbnailFileName = thumbnailFile.name;
+    const thumbnailFileType = thumbnailFile.type;
 
-      createPostMutation.mutate(
-        {
-          ...values,
-          thumbnailUrl,
-        },
-        {
-          onSettled: () => emits("close"),
-        }
-      );
-    });
+    await supabaseClient.storage
+      .from("post-thumbnails")
+      .upload(thumbnailFileName, thumbnailFile, {
+        upsert: true,
+        contentType: thumbnailFileType,
+      });
+
+    thumbnailFileUrl.value = supabaseClient.storage
+      .from("post-thumbnails")
+      .getPublicUrl(thumbnailFileName).data.publicUrl;
+  }
+
+  const thumbnailUrl = thumbnailFileUrl.value
+    ? thumbnailFileUrl.value
+    : "/thumbnail.webp";
+
+  createPostMutation.mutate(
+    {
+      ...values,
+      thumbnailUrl,
+    },
+    {
+      onSuccess: () => emits("close"),
+    }
+  );
 };
 </script>
